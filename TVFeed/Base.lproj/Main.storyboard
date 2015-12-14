@@ -1,25 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="6185.10" systemVersion="14A360a" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="NO" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="6C2-43-cbD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Feed-->
+        <scene sceneID="qE1-3X-eex">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                <collectionViewController title="Feed" id="6C2-43-cbD" customClass="FeedCollectionViewController" customModule="TVFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rki-KB-4pW">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LfH-yl-T0p">
+                            <size key="itemSize" width="640" height="1082"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="articleCell" id="HfJ-YE-kFC" customClass="ArticleCollectionViewCell" customModule="TVFeed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="640" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="640" height="1080"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pope" translatesAutoresizingMaskIntoConstraints="NO" id="zZg-EZ-d59">
+                                            <rect key="frame" x="0.0" y="0.0" width="640" height="1080"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96n-Jw-5BB">
+                                            <rect key="frame" x="0.0" y="0.0" width="640" height="1080"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.4137423155737705" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pope" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTc-Bf-ZwU">
+                                            <rect key="frame" x="28" y="883" width="584" height="77"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="64"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nytimes" translatesAutoresizingMaskIntoConstraints="NO" id="lq0-wN-9GF">
+                                            <rect key="frame" x="30" y="990" width="284" height="40"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• 2 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEg-QV-uvd">
+                                            <rect key="frame" x="321" y="994" width="154" height="32"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="26"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zZg-EZ-d59" firstAttribute="leading" secondItem="HfJ-YE-kFC" secondAttribute="leading" id="2wW-GU-hLi"/>
+                                    <constraint firstItem="zZg-EZ-d59" firstAttribute="top" secondItem="HfJ-YE-kFC" secondAttribute="top" id="5vq-ES-aY2"/>
+                                    <constraint firstItem="lq0-wN-9GF" firstAttribute="top" secondItem="sTc-Bf-ZwU" secondAttribute="bottom" constant="30" id="9OU-Cg-wrj"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="sTc-Bf-ZwU" secondAttribute="trailing" constant="20" id="Fbg-QU-Zkm"/>
+                                    <constraint firstItem="EEg-QV-uvd" firstAttribute="leading" secondItem="lq0-wN-9GF" secondAttribute="trailing" constant="7" id="M83-Md-gg1"/>
+                                    <constraint firstAttribute="bottom" secondItem="lq0-wN-9GF" secondAttribute="bottom" constant="50" id="OQk-2D-mqS"/>
+                                    <constraint firstItem="sTc-Bf-ZwU" firstAttribute="leading" secondItem="HfJ-YE-kFC" secondAttribute="leadingMargin" constant="20" id="ab3-2q-6Qw"/>
+                                    <constraint firstItem="lq0-wN-9GF" firstAttribute="leading" secondItem="HfJ-YE-kFC" secondAttribute="leading" constant="30" id="g2r-0e-baB"/>
+                                    <constraint firstAttribute="trailing" secondItem="96n-Jw-5BB" secondAttribute="trailing" id="gTh-cg-ld8"/>
+                                    <constraint firstItem="96n-Jw-5BB" firstAttribute="top" secondItem="HfJ-YE-kFC" secondAttribute="top" id="iTM-nZ-wTl"/>
+                                    <constraint firstItem="EEg-QV-uvd" firstAttribute="centerY" secondItem="lq0-wN-9GF" secondAttribute="centerY" id="icb-1S-aJs"/>
+                                    <constraint firstAttribute="trailing" secondItem="zZg-EZ-d59" secondAttribute="trailing" id="mMH-Nz-pxS"/>
+                                    <constraint firstAttribute="bottom" secondItem="zZg-EZ-d59" secondAttribute="bottom" id="pql-hq-UWw"/>
+                                    <constraint firstAttribute="bottom" secondItem="96n-Jw-5BB" secondAttribute="bottom" id="waF-ba-OsW"/>
+                                    <constraint firstItem="96n-Jw-5BB" firstAttribute="leading" secondItem="HfJ-YE-kFC" secondAttribute="leading" id="yc5-pO-lDU"/>
+                                </constraints>
+                                <size key="customSize" width="640" height="1080"/>
+                                <connections>
+                                    <outlet property="articleImageView" destination="zZg-EZ-d59" id="Ugs-WT-hgB"/>
+                                    <outlet property="articleTitleLabel" destination="sTc-Bf-ZwU" id="kdj-5A-pnp"/>
+                                    <outlet property="dateLabel" destination="EEg-QV-uvd" id="bjK-j7-gzK"/>
+                                    <outlet property="gradientView" destination="96n-Jw-5BB" id="6oy-Bb-wQD"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="6C2-43-cbD" id="4q2-uy-hy5"/>
+                            <outlet property="delegate" destination="6C2-43-cbD" id="V3K-c8-QgU"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="collectionView" destination="rki-KB-4pW" id="Vj2-8B-tQJ"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0r6-H1-OcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="140"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nytimes" width="284" height="40"/>
+        <image name="pope" width="1539" height="1000"/>
+    </resources>
 </document>

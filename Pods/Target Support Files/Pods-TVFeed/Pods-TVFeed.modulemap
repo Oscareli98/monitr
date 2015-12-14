@@ -1,0 +1,6 @@
+framework module Pods_TVFeed {
+  umbrella header "Pods-TVFeed-umbrella.h"
+
+  export *
+  module * { export * }
+}
